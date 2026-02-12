@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planètes</title>
+
+<style>
+body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Étoiles */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    box-shadow:
+        50px 80px white,
+        200px 150px white,
+        400px 300px white,
+        600px 100px white,
+        800px 250px white,
+        1000px 400px white,
+        1200px 200px white;
+    animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.3; }
+    to { opacity: 1; }
+}
+
+/* Centre */
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Jupiter */
+.jupiter {
+    width: 200px;
+    height: 200px;
+    background: repeating-linear-gradient(
+        #d8a47f 0px,
+        #c68642 15px,
+        #e0ac69 30px,
+        #b87333 45px
+    );
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* Orbite */
+.orbit {
+    width: 350px;
+    height: 350px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 50%;
+    position: absolute;
+    animation: rotate 10s linear infinite;
+}
+
+/* Mars */
+.mars {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at 30% 30%, #ff7043, #8b0000);
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 135px;
+}
+
+/* Rotation animation */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360d
